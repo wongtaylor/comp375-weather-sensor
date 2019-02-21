@@ -1,15 +1,3 @@
-/**
- * client.c
- *
- * @author Taylor Wong
- * USD COMP 375: Computer Networks
- * Project 1: Handles communication over a network between a client and server
- * (comp375.sandiego.edu) using sockets.  This program implements the client
- * (sensor.sandiego.edu) and handles communication with the server based on
- * the sensor chosen by the user.
- *
- */
-
 #define _XOPEN_SOURCE 600
 #define BUFF_SIZE 1024
 
@@ -92,6 +80,7 @@ void mainLoop(int server_fd) {
 	}
 }
 
+
 /**
  * Parses the message received from the server to get the port number
  * 
@@ -149,6 +138,7 @@ char* protocol(int server_fd, char *sensor_opt){
 	return response;
 }
 
+
 /** 
  * Print command prompt to user and obtain user input.
  *
@@ -194,6 +184,7 @@ long prompt() {
 	return selection;
 }
 
+
 /**
  * Socket implementation of connecting to a host at a specific port.
  *
@@ -235,6 +226,7 @@ int connectToHost(char *hostname, char *port) {
 	return fd;
 }
 
+
 /*
  * Sends message over given socket or exits if something went wrong
  *
@@ -260,6 +252,7 @@ void send_or_exit(int fd, char *buff, size_t buff_len){
 		send_or_exit(fd, sub_buff, new_len);
 	}
 }
+
 
 /*
  * Receives message from given socket or exits if something went wrong
